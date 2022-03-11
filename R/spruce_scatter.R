@@ -6,7 +6,7 @@
 #' @return Outputs a spruce scatter plot
 #' @export
 #'
-#' @examples spruce_scatter(spruce.df, title = TRUE)
+#' @examples \dontrun{spruce_scatter(spruce.df, title = TRUE)}
 spruce_scatter <- function(data, title = FALSE) {
 
   mainTitle = NULL;

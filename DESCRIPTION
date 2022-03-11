@@ -1,11 +1,20 @@
 Package: MATH4753.ArukshPatel.SP22
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Compiled Functions from MATH 4753
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Aruksh Patel
+Maintainer: Aruksh Patel <arukshpatel98@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends:
+    usethis
+Imports:
+    ggplot2,
+    dplyr
