@@ -10,7 +10,7 @@
 Function to filter, quadratic graph, and export DDT data
 }
 \usage{
-myddt(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", title = "Aruksh Patel")
+myddt(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", title = "Aruksh Patel", pathName = NA)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,6 +37,9 @@ myddt(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", title = "Aruk
   \item{title}{
   Title of Graph -- DEFAULT: ARUKSH PATEL
 %%     ~~Describe \code{title} here~~
+}
+  \item{pathName}{
+  Path and name of the output file. -- DEFAULT: NA
 }
 }
 \details{

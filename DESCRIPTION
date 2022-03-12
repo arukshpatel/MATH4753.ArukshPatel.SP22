@@ -1,20 +1,14 @@
 Package: MATH4753.ArukshPatel.SP22
 Type: Package
 Title: Compiled Functions from MATH 4753
-Version: 0.1.0
+Version: 1.0.0
 Author: Aruksh Patel
 Maintainer: Aruksh Patel <arukshpatel98@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Personal R Package with R functions used in MATH 4753. This package will continue to grow.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
-Suggests: 
-    knitr,
-    rmarkdown
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
-Depends:
-    usethis
-Imports:
-    ggplot2,
-    dplyr
+Imports: ggplot2, dplyr
+NeedsCompilation: no
+Packaged: 2022-03-12 02:48:20 UTC; kush

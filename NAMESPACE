@@ -3,4 +3,4 @@ importFrom("grDevices", "rainbow")
 importFrom("graphics", "barplot")
 importFrom("stats", "filter")
 importFrom("utils", "write.csv")
-importFrom("usethis","use_package")
+

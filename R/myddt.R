@@ -6,6 +6,7 @@
 #' @param yAxis = Independent Variable for your graph -- DEFAULT: LENGTH
 #' @param col = Color of the points on graph -- DEFAULT: RIVER
 #' @param title = Title of Graph -- DEFAULT: ARUKSH PATEL
+#' @param pathName = Path and name of the file. -- DEFAULT: ./Lvsfor{SPECIES}.csv
 #'
 #' @return List consisting of the filtered data, ggplot graph, relative and absolute path of the CSV files.
 #' @export LvsWfor{LIST-OF-SPECIES-IN-FILTERED-DATA}.csv = Output of the filtered data
@@ -13,10 +14,10 @@
 #' @examples \dontrun{myddt(df = ddt.df, cond = RIVER == "TRM", title = "TRM River Graph")}
 #'
 
-myddt <- function(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", title = "Aruksh Patel")
+myddt <- function(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", title = "Aruksh Patel", pathName = NA)
 {
-  usethis::use_package("ggplot2")
-  usethis::use_package("dplyr")
+  requireNamespace("ggplot2")
+  requireNamespace("dplyr")
 
   dfData = df %>% dplyr::filter({{cond}})
 
@@ -27,22 +28,27 @@ myddt <- function(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", t
 
   print(graph)
 
-  listOfSpecies = unique(dfData$SPECIES)
+  fileName = pathName;
 
-  speciesFileName = ''
-
-  if(length(listOfSpecies) == 1)
+  if(is.na(fileName))
   {
-    speciesFileName = listOfSpecies[1]
-  } else {
+    listOfSpecies = unique(dfData$SPECIES)
 
-    for(species in listOfSpecies)
+    speciesFileName = ''
+
+    if(length(listOfSpecies) == 1)
     {
-      speciesFileName = paste(speciesFileName, species, sep = '-')
-    }
-  }
+      speciesFileName = listOfSpecies[1]
+    } else {
 
-  fileName = paste("./output/LvsWfor", speciesFileName, ".csv", sep = "")
+      for(species in listOfSpecies)
+      {
+        speciesFileName = paste(speciesFileName, species, sep = '-')
+      }
+    }
+
+    fileName = paste("./LvsWfor", speciesFileName, ".csv", sep = "")
+  }
 
   write.csv(dfData, file = fileName)
 
