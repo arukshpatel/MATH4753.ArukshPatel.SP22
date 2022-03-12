@@ -8,16 +8,21 @@
 #' @param title = Title of Graph -- DEFAULT: ARUKSH PATEL
 #' @param pathName = Path and name of the file. -- DEFAULT: ./Lvsfor{SPECIES}.csv
 #'
+#' @import dplyr, ggplot2
 #' @return List consisting of the filtered data, ggplot graph, relative and absolute path of the CSV files.
 #' @export LvsWfor{LIST-OF-SPECIES-IN-FILTERED-DATA}.csv = Output of the filtered data
 #'
 #' @examples \dontrun{myddt(df = ddt.df, cond = RIVER == "TRM", title = "TRM River Graph")}
 #'
 
+
 myddt <- function(df, cond, xAxis = "WEIGHT", yAxis = "LENGTH", col = "RIVER", title = "Aruksh Patel", pathName = NA)
 {
+
   requireNamespace("ggplot2")
   requireNamespace("dplyr")
+  library(dplyr)
+
 
   dfData = df %>% dplyr::filter({{cond}})
 
